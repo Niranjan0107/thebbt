@@ -1,5 +1,6 @@
 "use client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import TestimonialSlider from "./parts/testimonials";
 import AreaWeServe from "./parts/areaWeSearve";
@@ -43,9 +44,18 @@ export default function HeroSlider() {
       }}
     >
       <h4>For institutions, founders, and <br/>houses that intend to last.</h4>
+      <div className="bbt-top-area">
       <h2 className="text-white text-7xl max-w-3xl">
        Design that <br/><em>drives</em> growth
       </h2>
+      <Link href="/" className="bbt-btn">See it unfold   <Image
+            src="/images/Arrow.png"
+            alt="BBT Arrow"
+            width={140}
+            height={50}
+            priority
+          /></Link>
+      </div>
 
 
       <div className="bbt-aws">
@@ -53,6 +63,15 @@ export default function HeroSlider() {
         <Whyus/>
         <TestimonialSlider/>
       </div>
+
+
+      <Link href="/" className="bbt-btn-top"><span>Get in Touch</span>  <Image
+            src="/images/big-arrow.png"
+            alt="BBT Arrow"
+            width={140}
+            height={50}
+            priority
+          /></Link>
     </section>
   );
 }
