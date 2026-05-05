@@ -7,13 +7,14 @@ import { usePathname } from "next/navigation";
 export default function Sidebar() {
   const pathname = usePathname();
 
-  const menuItems = [
-    { id: "01", name: "Home", path: "/" },
-    { id: "02", name: "Services", path: "/services" },
-    { id: "03", name: "About", path: "/about" },
-    { id: "04", name: "Testimonials", path: "/testimonials" },
-    { id: "05", name: "Contact", path: "/contact" },
-  ];
+const menuItems = [
+  { id: "01", name: "Home", path: "/" },
+  { id: "02", name: "Services", path: "/services" },
+  { id: "03", name: "About", path: "/about" },
+  { id: "04", name: "Testimonials", path: "/testimonials" },
+  { id: "05", name: "Contact", path: "/contact" },
+  { id: "06", name: "Case Studies", path: "/case-studies" }, 
+];
 
   return (
     <aside className="bg-dark">

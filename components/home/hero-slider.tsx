@@ -46,7 +46,7 @@ export default function HeroSlider() {
       <h4>For institutions, founders, and <br/>houses that intend to last.</h4>
       <div className="bbt-top-area">
       <h2 className="text-white text-7xl max-w-3xl">
-       Design that <br/><em>drives</em> growth
+       <span>Design</span>  that<br/><em>drives</em> growth.
       </h2>
       <Link href="/" className="bbt-btn">See it unfold   <Image
             src="/images/Arrow.png"
