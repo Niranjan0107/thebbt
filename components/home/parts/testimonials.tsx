@@ -87,7 +87,7 @@ export default function TestimonialSlider() {
           {/* Slide Content */}
           <div key={active} className="fade-slide">        
             {/* Quote */}
-            <p className="text-[18.7px] text-[#ffffff] font-extralight italic font-serif">
+            <p className="text-[18.7px] text-[18.7px] text-[#ffffff] font-extralight italic font-serif">
               “{item.quote}”
             </p>
 

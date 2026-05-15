@@ -223,8 +223,6 @@ img.bbt--client {
 
 .bbt-main-banner h2 {
     font-weight: 300;
-    font-size: 75.22px;
-    line-height: 76.46px;
     letter-spacing: -3.38px;
 }
 .bbt-main-banner h2 em {
@@ -805,4 +803,9 @@ letter-spacing: -2px;
 .project-testimonials .user-name
 {
     text-transform: unset;
+}
+
+
+html, body, .bottom-section {
+    scroll-behavior: smooth;
 }

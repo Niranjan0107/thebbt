@@ -6,6 +6,8 @@ import VideoIcon from "../../../public/video.svg";
 import Back from "../../../public/back.svg";
 import DownArrow from "../../../public/down-arrow.svg";
 import TestimonialSlider from "@/app/case-studies/parts/testimonials";
+import RelatedCases from "../parts/relatedCases";
+import ProjectNavigation from "../parts/projectNavigation";
 export default async function Page({
   params,
 }: {
@@ -15,96 +17,272 @@ export default async function Page({
 
   const project = cases.find((c) => c.slug === slug);
 
+  const relatedCases = cases.filter((item) => item.slug !== project?.slug);
+
   if (!project) return notFound();
 
   return (
-    <div
-      className=" text-white h-screen bg-no-repeat bg-cover bg-right-top relative "
-      style={{ backgroundImage: `url(${project.image})` }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+    <>
+      <div
+        className=" text-white h-screen  px-16 bg-no-repeat bg-cover bg-right-top relative "
+        style={{ backgroundImage: `url(${project.image})` }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
 
-      <div className="project-wrap relative z-10 p-16 pb-30 h-full flex flex-col justify-between">
-        <div className="single-header flex align-center justify-between">
-          <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
-            <Link href="/case-studies" className="flex items-center  gap-2">
-              {" "}
-              <Image
-                src={Back}
-                alt="BBT Video"
-                width={16}
-                height={16}
-                priority
-              />{" "}
-              INDEX{" "}
-            </Link>
-          </span>
-
-          <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
-            2026
-          </span>
-        </div>
-        <div className="single-content  flex items-end justify-between 2xl:max-w-[90%]">
-          <div className="project-details max-w-xl ">
-            <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
-              {project.services}
+        <div className="project-wrap  h-screen relative z-10 pb-30 h-full flex flex-col justify-between">
+          <div className="single-header flex align-center justify-between">
+            <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
+              <Link href="/case-studies" className="flex items-center  gap-2">
+                {" "}
+                <Image
+                  src={Back}
+                  alt="BBT Video"
+                  width={16}
+                  height={16}
+                  priority
+                />{" "}
+                INDEX{" "}
+              </Link>
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mt-2 mb-4 font-medium leading-tight">
-              {project.title.split(" ").slice(0, -1).join(" ")}
-              <span className="italic block">
-                {project.title.split(" ").slice(-1)}
-              </span>
-            </h1>
 
-            <span className="mt-6 text-neutral-300 max-w-lg">
-              {project.description}
+            <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
+              2026
             </span>
-            <div className="mt-8 actions flex items-center gap-4 text-neutral-400 text-xs uppercase">
-              <button className="border border-[1.04px] border-white/30 px-3 py-2 tracking-wide hover:bg-black hover:text-white transition text-white/90 ">
-                <Link href="/" className="flex items-center font-medium text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center color-white  gap-3">
-                  {" "}
-                  <Image
-                    src={VideoIcon}
-                    alt="BBT Video"
-                    width={30}
-                    height={30}
-                    priority
-                  />{" "}
-                  <span className="font-medium text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center text-white/90">WATCH THE CASE FILM</span>{" "}
-                </Link>
-              </button>
-
+          </div>
+          <div className="single-content  flex items-end justify-between 4xl:max-w-[90%]">
+            <div className="project-details max-w-xl ">
               <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
-                or scroll to read
+                {project.services}
               </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mt-2 mb-4 font-medium leading-tight">
+                {project.title.split(" ").slice(0, -1).join(" ")}
+                <span className="italic block">
+                  {project.title.split(" ").slice(-1)}
+                </span>
+              </h1>
+
+              <span className="mt-6 text-neutral-300 max-w-lg">
+                {project.description}
+              </span>
+              <div className="mt-8 actions flex items-center gap-4 text-neutral-400 text-xs uppercase">
+                <button className="border border-[1.04px] border-white/30 px-3 py-2 tracking-wide hover:bg-black hover:text-white transition text-white/90 ">
+                  <Link
+                    href="/"
+                    className="flex items-center font-medium text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center color-white  gap-3"
+                  >
+                    {" "}
+                    <Image
+                      src={VideoIcon}
+                      alt="BBT Video"
+                      width={30}
+                      height={30}
+                      priority
+                    />{" "}
+                    <span className="font-medium text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center text-white/90">
+                      WATCH THE CASE FILM
+                    </span>{" "}
+                  </Link>
+                </button>
+
+                <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
+                  or scroll to read
+                </span>
+              </div>
+            </div>
+
+            <div className="project-testimonials 1">
+              <TestimonialSlider />
             </div>
           </div>
-
-          <div className="project-testimonials 1">
-
-            <TestimonialSlider/>
+          <div className="project-continue absolute bottom-5 left-1/2 -translate-x-1/2">
+            <Link
+              href="#more-info"
+              className="flex flex-col items-center gap-1  font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]"
+            >
+              Continue
+              <Image
+                src={DownArrow}
+                alt="BBT Down Arrow"
+                width={15}
+                height={15}
+                priority
+              />
+            </Link>
           </div>
-
-
-
-          
         </div>
-   <div className="project-continue absolute bottom-5 left-1/2 -translate-x-1/2">
-  
-  <span className="flex flex-col items-center gap-1  font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
-    Continue
-    <Image
-      src={DownArrow}
-      alt="BBT Down Arrow"
-      width={15}
-      height={15}
-      priority
-    />
-  </span>
-
-</div>
       </div>
+
+
+<ProjectNavigation currentSlug={project.slug} />
+
+
+
+
+
+      <div className="bottom-section pt-10" id="more-info">
+
+      {/* intro section */}
+      <section className="border-white/[0.06] py-[120px] px-16">
+
+  <div className="flex flex-col xl:flex-row">
+
+    {/* LEFT LABEL */}
+    <div className="xl:w-[25%] mb-10 xl:mb-0">
+
+      <span className="font-inter font-medium text-[11px] leading-[16.5px] tracking-[2.4px] uppercase text-white/35">
+        01 — The Brief
+      </span>
+
     </div>
+
+    {/* RIGHT CONTENT */}
+    <div className="xl:w-[650px] max-w-[650px] ml-ato">
+
+      {/* Heading */}
+      <h2 className="font-inter font-light   text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
+        {project.abouteading}
+      </h2>
+
+      {/* Paragraph */}
+      <p className="mt-[26px] max-w-[620px] font-inter font-normal text-[18px] leading-[1.55] tracking-[-0.3px] text-white/70">
+       {project.aboutDescription} 
+      </p>
+
+      {/* CTA */}
+      <button className="mt-[28px] text-[#0D52DB] font-inter font-medium text-[18px] leading-[1.5] tracking-[-0.2px] hover:opacity-70 transition">
+        Read More
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+      {/* intro section */}
+
+
+    <img src={project.projectImage1} className="mb-4"/>
+    <img src={project.projectImage2} className="mb-4"/>
+<img src={project.projectImage3} className="mb-4"/>
+    <img src={project.projectImage4} className="mb-4"/>
+
+{/* Saying */}
+<section className="quote-section border-t border-white/[0.06] py-[160px] overflow-hidden">
+
+  <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+
+    {/* Quote */}
+    <h2 className="font-source-serif font-light italic text-[78px] lg:text-[78px] leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
+
+      “{project.quote} ”
+
+    </h2>
+
+    {/* Meta */}
+    <div className="mt-[42px]">
+
+      <span className="font-inter font-[200] text-[18px] leading-[16px] tracking-[1.9px] uppercase text-white/50">
+
+        —  {project.quoteBy} 
+
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+{/* Saying */}
+
+
+<img src={project.projectImage4} className="mb-4"/>
+    <img src={project.projectImage5} className="mb-4"/>
+<img src={project.projectImage6} className="mb-4"/>
+    <img src={project.projectImage7} className="mb-4"/>
+<img src={project.projectImage8} className="mb-4"/>
+    <img src={project.projectImage9} className="mb-4"/>
+    <img src={project.projectImage10} className="mb-4"/>
+<img src={project.projectImage11} className="mb-4"/>
+
+        {/* Credit */}
+        <div className="credits-section py-32 text-white px-16  ">
+          <div className="flex flex-col lg:flex-row justify-between gap-20">
+            {/* Left */}
+            <div className="w-full lg:w-[20%]">
+              <p className="uppercase text-[11px] tracking-[3px] text-white/40">
+                02 — Credits
+              </p>
+            </div>
+
+            {/* Right */}
+            <div className="w-full lg:w-[75%] grid grid-cols-1 md:grid-cols-2 gap-x-10">
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Strategy
+                </span>
+
+                <span className="text-white text-left md:w-[200px]">
+                  {project.Strategy} 
+                </span>
+              </div>
+
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Identity
+                </span>
+
+                <span className="text-white text-left md:w-[200px]">
+                  {project.Identity} 
+                </span>
+              </div>
+
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Type Design
+                </span>
+
+                <span className="text-white text-left md:w-[200px]"> {project.typeDesign} </span>
+              </div>
+
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Photography
+                </span>
+
+                <span className="text-white text-left md:w-[200px]"> {project.Photography} </span>
+              </div>
+
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Editorial
+                </span>
+
+                <span className="text-white text-left md:w-[200px]"> {project.Editorial} </span>
+              </div>
+
+              {/* Item */}
+              <div className="border-t border-white/10 py-6 flex justify-between">
+                <span className="uppercase text-[11px] tracking-[2px] text-white/40">
+                  Digital
+                </span>
+
+                <span className="text-white text-left md:w-[200px]">
+                   {project.Digital} 
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Credit */}
+
+        <RelatedCases></RelatedCases>
+      </div>
+    </>
   );
 }
