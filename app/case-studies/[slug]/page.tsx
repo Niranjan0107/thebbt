@@ -281,8 +281,9 @@ export default async function Page({
         </div>
         {/* Credit */}
 
-        <RelatedCases></RelatedCases>
-      </div>
+<RelatedCases currentSlug={project.slug} />     
+
+ </div>
     </>
   );
 }
