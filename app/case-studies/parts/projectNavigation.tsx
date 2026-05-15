@@ -26,7 +26,7 @@ export default function ProjectNavigation({
       : null;
 
   return (
-    <div className="border-t border-white/[0.06] py-6 px-6">
+    <div className="border-t border-white/[0.06] py-6 px-6 bg-[#000000]">
 
       <div className="flex items-center justify-between">
 

@@ -31,7 +31,7 @@ export default async function Page({
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="project-wrap  h-screen relative z-10 pb-30 h-full flex flex-col justify-between">
-          <div className="single-header flex align-center justify-between">
+          <div className="single-header flex align-center justify-between pt-6">
             <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
               <Link href="/case-studies" className="flex items-center  gap-2">
                 {" "}
