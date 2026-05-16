@@ -78,7 +78,7 @@ useEffect(() => {
         <div   ref={contentRef} className="bbt-content flex-1 overflow-y-auto">
           <div
   className={`
-    fixed z-[99] w-100 mobile-header
+    fixed z-[99] w-[100%] mobile-header
     flex items-center gap-2
     px-4 py-3
     md:hidden justify-between
