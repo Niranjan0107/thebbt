@@ -43,7 +43,7 @@ md:grid md:grid-cols-3 md:overflow-auto  scrollbar-hide">
           <Link
             key={item.slug}
             href={`/case-studies/${item.slug}`}
-            className="group min-w-[80%] md:min-w-0"
+            className="group min-w-[88%] md:min-w-0"
           >
 
             {/* Image */}
@@ -51,7 +51,7 @@ md:grid md:grid-cols-3 md:overflow-auto  scrollbar-hide">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[320px] object-cover transition duration-700 group-hover:scale-105"
+                className="w-full h-[220px] md:h-[320px] object-cover transition duration-700 group-hover:scale-105"
               />
             </div>
 
@@ -62,7 +62,7 @@ md:grid md:grid-cols-3 md:overflow-auto  scrollbar-hide">
             </div>
 
             {/* Title */}
-            <h3 className="mt-3 text-2xl text-white">
+            <h3 className="mt-3 text-xl md:text-2xl text-white">
               {item.title}
             </h3>
 

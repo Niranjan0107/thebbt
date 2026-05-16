@@ -878,6 +878,26 @@ body .scrollbar-hide
     scrollbar-width: none !important;  /* Firefox */
     
 }
+body .list-details-2 {
+    margin-left: 24px!important;
+}
+
+body  .list-details-2 span, .list-details-1 h3 {
+    white-space: nowrap!important;
+}
+
+body  .list-projects {
+    overflow: auto!important;
+    scrollbar-width: none!important;
+    column-gap: 22px!important;
+    align-items: center!important;
+    padding-top: 14px!important;
+    padding-bottom: 14px!important;
+}
+
+body  .list-details-1 h3 {
+    font-size: 23px!important;
+}
 body ul.sectors-menu li a {
     margin: 10px 0 !important;
     font-size: 12.65px !important;

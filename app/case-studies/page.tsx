@@ -222,9 +222,9 @@ export default function CaseStudiesPage() {
             <Link href={`/case-studies/${item.slug}`}>
               <div
                 key={item.id}
-                className="flex flex-col md:flex-row md:items-center md:justify-between py-6 hover:bg-neutral-900 transition px-2"
+                className="flex flex-row md:flex-row md:items-center md:justify-between py-6 hover:bg-neutral-900 transition px-2 list-projects"
               >
-                <div className="flex gap-6 items-center w-[45%]">
+                <div className="flex gap-3  md:gap-6 items-center w-[100%] md:w-[45%] list-details-1">
                   <span className="font-inter font-medium text-[11px] leading-[16.5px] tracking-[-0.16px] text-white/65 w-15">
                     {item.id}
                   </span>
@@ -233,7 +233,7 @@ export default function CaseStudiesPage() {
                   </h3>
                 </div>
 
-                <div className="flex gap-10 text-sm text-neutral-400 mt-2 md:mt-0 w-[55%] flex justify-between">
+                <div className="flex gap-3   md:gap-10 text-sm text-neutral-400 mt-2 md:mt-0 w-[100%] md:w-[55%] flex justify-between list-details-2">
                   <span className="font-medium text-[12px] leading-[18px] tracking-[0.72px] text-white/55 uppercase">
                     {item.category}
                   </span>
