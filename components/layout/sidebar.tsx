@@ -4,7 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Sidebar() {
+export default function Sidebar({
+  setOpen,
+}: {
+  setOpen: (value: boolean) => void;
+}) {
   const pathname = usePathname();
 
 const menuItems = [
@@ -41,6 +45,7 @@ const menuItems = [
           return (
             <li key={item.path}>
               <Link
+                onClick={() => setOpen(false)} 
                 href={item.path}
                 className={`flex items-center gap-3 transition-all duration-300 ${
                   isActive

@@ -14,7 +14,7 @@ const relatedCases = cases
   .slice(0, 3);
 
   return (
-    <div className=" border-t border-white/10 px-16 pt-20 pb-20">
+    <div className=" border-t border-white/10 px-4 py-15 md:px-16 md:py-20">
 
       {/* Heading */}
       <div className="flex justify-between items-center mb-10">
@@ -28,7 +28,7 @@ const relatedCases = cases
 
         <Link
           href="/case-studies"
-          className="uppercase text-[11px] tracking-[2px] text-white/50 hover:text-white transition"
+          className="hidden md:block uppercase text-[11px] tracking-[2px] text-white/50 hover:text-white transition"
         >
           View Full Index →
         </Link>
@@ -36,13 +36,14 @@ const relatedCases = cases
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="flex overflow-x-auto gap-6 whitespace-nowrap
+md:grid md:grid-cols-3 md:overflow-auto  scrollbar-hide">
 
         {relatedCases.map((item) => (
           <Link
             key={item.slug}
             href={`/case-studies/${item.slug}`}
-            className="group"
+            className="group min-w-[80%] md:min-w-0"
           >
 
             {/* Image */}
@@ -69,6 +70,13 @@ const relatedCases = cases
         ))}
 
       </div>
+
+      <Link
+          href="/case-studies"
+          className="block md:hidden mt-10 uppercase text-[11px] tracking-[2px] text-white/50 hover:text-white transition"
+        >
+          View Full Index →
+        </Link>
 
     </div>
   );

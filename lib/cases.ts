@@ -58,7 +58,7 @@ export const cases: Case[] = [
          projectImage6: '/images/prana-6.png',
           projectImage7: '/images/prana-7.png',
            projectImage8: '/images/prana-8.png',
-            projectImage9: '/images/prana-9.png',
+            projectImage9: '/images/praana-9.png',
              projectImage10: '/images/prana-10.png',
               projectImage11: '/images/prana-11.png',
 
@@ -183,7 +183,7 @@ export const cases: Case[] = [
          projectImage6: '/images/prana-6.png',
           projectImage7: '/images/prana-7.png',
            projectImage8: '/images/prana-8.png',
-            projectImage9: '/images/prana-9.png',
+            projectImage9: '/images/praana-9.png',
              projectImage10: '/images/prana-10.png',
               projectImage11: '/images/prana-11.png',
   },

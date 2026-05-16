@@ -26,7 +26,7 @@ export default function ProjectNavigation({
       : null;
 
   return (
-    <div className="border-t border-white/[0.06] py-6 px-6 bg-[#000000]">
+    <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000] md:mt-[0]">
 
       <div className="flex items-center justify-between">
 
@@ -39,17 +39,17 @@ export default function ProjectNavigation({
               className="group inline-flex items-start gap-3"
             >
 
-              <span className="text-white/40 text-xl transition group-hover:-translate-x-1">
+              <span className="text-white/40 text-[12px] md:text-xl transition group-hover:-translate-x-1">
                 ←
               </span>
 
               <div>
 
-                <p className="font-inter font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
+                <p className="font-inter font-normal text-[8px] leading-[12px] md:text-[10.43px] md:leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
                   Previous · {prevProject.id}
                 </p>
 
-                <h3 className="mt-1 text-white uppercase text-[14px] leading-none">
+                <h3 className="mt-1 text-white uppercase text-[12px] ms:text-[14px] leading-none">
                   {prevProject.title}
                 </h3>
 
@@ -63,11 +63,11 @@ export default function ProjectNavigation({
         {/* CENTER */}
         <div className="w-[33%] text-center">
 
-          <h3 className="font-inter font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
+          <h3 className="font-inter font-normal text-[8px] leading-[12px] md:text-[10.43px] md:leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
             {currentProject.title}
           </h3>
 
-          <span className="mt-1 block text-white font-normal text-[12px] leading-[15.64px] tracking-[3.34px] uppercase">
+          <span className="mt-1 block text-white font-normal text-[10px] md:text-[12px] leading-[15.64px] tracking-[3.34px] uppercase">
             {currentIndex + 1} / {cases.length}
           </span>
 
@@ -84,17 +84,17 @@ export default function ProjectNavigation({
 
               <div>
 
-                <p className="font-inter font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
+                <p className="font-inter font-normal text-[8px] leading-[12px] md:text-[10.43px] md:leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
                   Next · {nextProject.id}
                 </p>
 
-                <h3 className="mt-1 text-white uppercase text-[14px] leading-none">
+                <h3 className="mt-1 text-white uppercase text-[12px] md:text-[14px] leading-none">
                   {nextProject.title}
                 </h3>
 
               </div>
 
-              <span className="text-white/40 text-xl transition group-hover:translate-x-1">
+              <span className="text-white/40 text-[12px] md:text-xl transition group-hover:translate-x-1">
                 →
               </span>
 

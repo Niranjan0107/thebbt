@@ -35,7 +35,7 @@ export default function CaseStudiesPage() {
             {filteredCases.length} OF {cases.length} CASES
           </p>
         </div>
-        <h1 className="text-big">
+        <h1 className="text-big ">
           Selected <span className="italic">cases.</span>
         </h1>
 
@@ -46,9 +46,9 @@ export default function CaseStudiesPage() {
         </p>
 
         {/* FILTERS + VIEW TOGGLE */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-10 mb-10 gap-6 border-b border-t border-neutral-800 pt-4 pb-4">
+        <div className="flex md:flex-row md:items-center md:justify-between mt-10 mb-10 gap-6 border-b border-t border-neutral-800 pt-4 pb-4">
           {/* FILTERS */}
-          <div className="flex flex-wrap gap-4 text-xs tracking-wide">
+          <div className="flex gap-4 text-xs tracking-wide overflow-x-auto whitespace-nowrap md:flex-wrap scrollbar-hide">
             {filters.map((f) => (
               <button
                 key={f}

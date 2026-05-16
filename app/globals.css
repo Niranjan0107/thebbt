@@ -809,3 +809,123 @@ letter-spacing: -2px;
 html, body, .bottom-section {
     scroll-behavior: smooth;
 }
+
+
+@media(max-width:767px)
+{
+    
+
+.bbt-main-banner h4 {
+    font-size: 13.6px;
+    line-height: 18.17px;
+    min-width: 100%;
+    text-align: center;
+}
+
+body .actions .v-btn 
+{
+        background: #0000007D;
+    justify-content: center;
+    display: flex;
+    margin: 0 auto;
+}
+body .bbt-main-banner h2 {
+
+    min-width: 100%;
+    text-align: center;
+    max-width: 100% !important;
+    font-size: 45px;
+    line-height: 50px;
+}
+body .bbt-part-box {
+    background: #0000003D;
+    backdrop-filter: blur(5.639872px);
+    box-shadow: 0px 4.39px 177.19px 0px #0000000D !important;
+    min-width: 68%;
+}
+body  .bbt-part-box-f {
+    justify-content: center;
+}
+body .bbt-part-box {
+    min-height: 222px;
+    max-height: 220px;
+}
+body .bbt-part-header {
+    position: relative;
+    top: -45px;
+}
+body .bbt-part-box.testimonial-box {
+    margin-right: 32%;
+}
+
+body .project-testimonials {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+}
+body .project-testimonials .bbt-part-box.testimonial-box  {
+   margin-right: 0%;
+   min-width: 100%;
+   width: 100%;
+   text-align: center;
+}
+
+body .scrollbar-hide
+{
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+    scrollbar-width: none !important;  /* Firefox */
+    
+}
+body ul.sectors-menu li a {
+    margin: 10px 0 !important;
+    font-size: 12.65px !important;
+}
+.bbt-part-box h3 {
+    font-size: 26px !important;
+}
+body .bbt-aws .bbt-part-box {
+    padding: 20px !important;
+}
+body .bbt-sidebar {
+    z-index: 999 !important;
+}
+
+body .mobile-header {
+    z-index: 99;
+}
+body .more-info
+{
+    margin-top: 40px;
+}
+body  .bbt-aws {
+    max-width: none;
+    overflow: auto;
+    scrollbar-width: none;
+
+}
+body .bbt-top-area
+{
+     min-width: 100%;
+    text-align: center; 
+}
+body .bbt-main-banner {
+    row-gap: 15px;
+    padding-top: 80px !important;
+    padding: 50px 25px;
+    position: relative;
+            overflow: hidden;
+}
+body .project-details {
+    text-align: center !important;
+}
+body .text-big {
+    font-size: 46px;
+    line-height: 50.8px;
+}
+body a.bbt-btn-top, body .bbt-top-area a.bbt-btn
+{
+    display: none !important;
+}
+}

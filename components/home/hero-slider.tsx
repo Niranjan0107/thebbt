@@ -38,14 +38,14 @@ export default function HeroSlider() {
 
   return (
     <section
-      className="w-full h-screen bg-cover bg-center transition-all duration-1000 flex items-center px-20 bbt-main-banner"
+      className="w-full h-screen bg-cover bg-center transition-all duration-1000 flex items-center px-[5px] sm:px-20 bbt-main-banner"
       style={{
         backgroundImage: `url(${slides[index].image})`,
       }}
     >
       <h4>For institutions, founders, and <br/>houses that intend to last.</h4>
       <div className="bbt-top-area">
-      <h2 className="text-white text-7xl max-w-3xl">
+      <h2 className="text-white text-5xl sm:text-7xl max-w-3xl">
        <span>Design</span>  that<br/><em>drives</em> growth.
       </h2>
       <Link href="/" className="bbt-btn">See it unfold   <Image

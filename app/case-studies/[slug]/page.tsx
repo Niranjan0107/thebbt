@@ -8,6 +8,7 @@ import DownArrow from "../../../public/down-arrow.svg";
 import TestimonialSlider from "@/app/case-studies/parts/testimonials";
 import RelatedCases from "../parts/relatedCases";
 import ProjectNavigation from "../parts/projectNavigation";
+import SingleTestimonial from "../parts/SingleTestimonial";
 export default async function Page({
   params,
 }: {
@@ -24,14 +25,14 @@ export default async function Page({
   return (
     <>
       <div
-        className=" text-white h-screen  px-16 bg-no-repeat bg-cover bg-right-top relative "
+        className=" text-white h-screen px-0 md:px-16 bg-no-repeat bg-cover bg-right-top relative "
         style={{ backgroundImage: `url(${project.image})` }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60" />
 
         <div className="project-wrap  h-screen relative z-10 pb-30 h-full flex flex-col justify-between">
-          <div className="single-header flex align-center justify-between pt-6">
+          <div className="single-header hidden  md:flex align-center justify-between pt-15 md:pt-6">
             <span className=" tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60">
               <Link href="/case-studies" className="flex items-center  gap-2">
                 {" "}
@@ -50,8 +51,8 @@ export default async function Page({
               2026
             </span>
           </div>
-          <div className="single-content  flex items-end justify-between 4xl:max-w-[90%]">
-            <div className="project-details max-w-xl ">
+          <div className="single-content pt-20 md:pt-0 flex-col md:flex-row flex items-end justify-between 4xl:max-w-[90%]">
+            <div className="project-details max-w-xl px-4 md:px-0">
               <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
                 {project.services}
               </span>
@@ -62,11 +63,11 @@ export default async function Page({
                 </span>
               </h1>
 
-              <span className="mt-6 text-neutral-300 max-w-lg">
+              <span className="mt-6 text-neutral-300 max-w-lg text-[16px]">
                 {project.description}
               </span>
               <div className="mt-8 actions flex items-center gap-4 text-neutral-400 text-xs uppercase">
-                <button className="border border-[1.04px] border-white/30 px-3 py-2 tracking-wide hover:bg-black hover:text-white transition text-white/90 ">
+                <button className="v-btn border border-[1.04px] border-white/30 px-3 py-2 tracking-wide hover:bg-black hover:text-white transition text-white/90 ">
                   <Link
                     href="/"
                     className="flex items-center font-medium text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center color-white  gap-3"
@@ -85,17 +86,17 @@ export default async function Page({
                   </Link>
                 </button>
 
-                <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
+                <span className="hidden md:flex  font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
                   or scroll to read
                 </span>
               </div>
             </div>
 
             <div className="project-testimonials 1">
-              <TestimonialSlider />
+              <SingleTestimonial />
             </div>
           </div>
-          <div className="project-continue absolute bottom-5 left-1/2 -translate-x-1/2">
+          <div className="project-continue absolute bottom-5 left-1/2 -translate-x-1/2 hidden md:flex">
             <Link
               href="#more-info"
               className="flex flex-col items-center gap-1  font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]"
@@ -120,10 +121,10 @@ export default async function Page({
 
 
 
-      <div className="bottom-section pt-10" id="more-info">
+      <div className="bottom-section pt-1 md:pt-10" id="more-info">
 
       {/* intro section */}
-      <section className="border-white/[0.06] py-[120px] px-16">
+      <section className="border-white/[0.06] py-[60] md:py-[120px] px-4 md:px-16">
 
   <div className="flex flex-col xl:flex-row">
 
@@ -140,17 +141,17 @@ export default async function Page({
     <div className="xl:w-[650px] max-w-[650px] ml-ato">
 
       {/* Heading */}
-      <h2 className="font-inter font-light   text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
+      <h2 className="font-inter font-light  text-[36px] md:text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
         {project.abouteading}
       </h2>
 
       {/* Paragraph */}
-      <p className="mt-[26px] max-w-[620px] font-inter font-normal text-[18px] leading-[1.55] tracking-[-0.3px] text-white/70">
+      <p className="mt-[26px] max-w-[620px] font-inter font-normal text-[16px] md:text-[18px] leading-[1.55] tracking-[-0.3px] text-white/70">
        {project.aboutDescription} 
       </p>
 
       {/* CTA */}
-      <button className="mt-[28px] text-[#0D52DB] font-inter font-medium text-[18px] leading-[1.5] tracking-[-0.2px] hover:opacity-70 transition">
+      <button className="mt-[28px] text-[#0D52DB] font-inter font-medium text-[16px] md:text-[18px] leading-[1.5] tracking-[-0.2px] hover:opacity-70 transition">
         Read More
       </button>
 
@@ -162,27 +163,27 @@ export default async function Page({
       {/* intro section */}
 
 
-    <img src={project.projectImage1} className="mb-4"/>
-    <img src={project.projectImage2} className="mb-4"/>
-<img src={project.projectImage3} className="mb-4"/>
-    <img src={project.projectImage4} className="mb-4"/>
+    <img src={project.projectImage1} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage2} className="w-full h-auto mb-4"/>
+<img src={project.projectImage3} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage4} className="w-full h-auto mb-4"/>
 
 {/* Saying */}
-<section className="quote-section border-t border-white/[0.06] py-[160px] overflow-hidden">
+<section className="quote-section border-t border-white/[0.06] py-[60] md:py-[160px] overflow-hidden">
 
   <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
 
     {/* Quote */}
-    <h2 className="font-source-serif font-light italic text-[78px] lg:text-[78px] leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
+    <h2 className="font-source-serif font-light italic text-[36px] leading-[1.4] md:text-[78px] lg:text-[78px] md:leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
 
       “{project.quote} ”
 
     </h2>
 
     {/* Meta */}
-    <div className="mt-[42px]">
+    <div className="mt-[20px] md:mt-[42px]">
 
-      <span className="font-inter font-[200] text-[18px] leading-[16px] tracking-[1.9px] uppercase text-white/50">
+      <span className="font-inter font-[200] text-[12px] md:text-[18px] leading-[16px] tracking-[1.9px] uppercase text-white/50">
 
         —  {project.quoteBy} 
 
@@ -196,17 +197,17 @@ export default async function Page({
 {/* Saying */}
 
 
-<img src={project.projectImage4} className="mb-4"/>
-    <img src={project.projectImage5} className="mb-4"/>
-<img src={project.projectImage6} className="mb-4"/>
-    <img src={project.projectImage7} className="mb-4"/>
-<img src={project.projectImage8} className="mb-4"/>
-    <img src={project.projectImage9} className="mb-4"/>
-    <img src={project.projectImage10} className="mb-4"/>
-<img src={project.projectImage11} className="mb-4"/>
+<img src={project.projectImage4} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage5} className="w-full h-auto mb-4"/>
+<img src={project.projectImage6} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage7} className="w-full h-auto mb-4"/>
+<img src={project.projectImage8} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage9} className="w-full h-auto mb-4"/>
+    <img src={project.projectImage10} className="w-full h-auto mb-4"/>
+<img src={project.projectImage11} className="w-full h-auto mb-4"/>
 
         {/* Credit */}
-        <div className="credits-section py-32 text-white px-16  ">
+        <div className="credits-section py-15 md:py-32 text-white px-4 md:px-16  ">
           <div className="flex flex-col lg:flex-row justify-between gap-20">
             {/* Left */}
             <div className="w-full lg:w-[20%]">
