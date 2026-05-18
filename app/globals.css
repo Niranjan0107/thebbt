@@ -911,7 +911,7 @@ body .bbt-footer {
     background: #00000000 !important;
 }
 body .bbt-content-area {
-    max-height: calc(100% - 100px);
+    max-height: calc(100dvh - 100px);
 }
 body .project-testimonials {
     position: absolute;
@@ -993,6 +993,7 @@ body .bbt-main-banner {
     padding: 0px;
     position: relative;
             overflow: hidden;
+                    height: 100dvh;
 }
 body .project-details {
     text-align: center !important;
