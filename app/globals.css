@@ -894,9 +894,7 @@ body .bbt-aws {
         width: 100% !important;
         padding-bottom: 18dvh;
     }
-.bbt-layout.flex.h-screen {
-    height: 100dvh !important;
-}
+
 .bbt-main-banner > * {
     z-index: 11;
 }
