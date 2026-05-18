@@ -52,7 +52,7 @@ useEffect(() => {
         className={`${inter.variable} ${sourceSerif.variable} min-h-full flex flex-col`}
       >
         <link rel="stylesheet" href="https://use.typekit.net/hml3npk.css"></link>
-         <main className="overflow-hidden">
+         <main className="overflow-hidden1">
       <div className="bbt-layout flex h-screen">
         
         {/* Sidebar */}

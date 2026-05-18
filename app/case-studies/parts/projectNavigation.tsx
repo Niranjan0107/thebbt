@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { cases } from "@/lib/cases";
-
+import { useEffect, useState } from "react";
 type Props = {
   currentSlug: string;
 };
@@ -8,6 +10,10 @@ type Props = {
 export default function ProjectNavigation({
   currentSlug,
 }: Props) {
+
+
+
+  const [showNav, setShowNav] = useState(false);
 
   const currentIndex = cases.findIndex(
     (item) => item.slug === currentSlug
@@ -25,8 +31,41 @@ export default function ProjectNavigation({
       ? cases[currentIndex + 1]
       : null;
 
+
+
+useEffect(() => {
+
+  const content = document.querySelector(".bbt-content");
+
+  if (!content) return;
+
+  const handleScroll = () => {
+
+    const scrollTop = content.scrollTop;
+
+    console.log(scrollTop);
+
+    setShowNav(scrollTop > 100);
+
+  };
+
+  content.addEventListener("scroll", handleScroll);
+
+  return () => {
+    content.removeEventListener("scroll", handleScroll);
+  };
+
+}, []);
+
   return (
-    <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000] md:mt-[0]">
+   <div
+  className={`fixed bottom-0 right-0 z-50 transition-all duration-500 w-full md:w-[calc(100%-255px)] ${
+    showNav
+      ? "translate-y-0 opacity-100"
+      : "translate-y-full opacity-0 pointer-events-none"
+  }`}
+>
+    <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000f0] md:mt-[0]">
 
       <div className="flex items-center justify-between">
 
@@ -106,5 +145,8 @@ export default function ProjectNavigation({
       </div>
 
     </div>
+
+</div>
+    
   );
 }

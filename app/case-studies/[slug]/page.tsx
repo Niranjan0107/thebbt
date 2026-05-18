@@ -9,6 +9,7 @@ import TestimonialSlider from "@/app/case-studies/parts/testimonials";
 import RelatedCases from "../parts/relatedCases";
 import ProjectNavigation from "../parts/projectNavigation";
 import SingleTestimonial from "../parts/SingleTestimonial";
+import CurveImage from "../../../public/images/curve.svg";
 export default async function Page({
   params,
 }: {
@@ -124,12 +125,22 @@ export default async function Page({
       <div className=" bg-[#0A0A0A] bottom-section pt-1 md:pt-10" id="more-info">
 
       {/* intro section */}
-      <section className="border-white/[0.06] py-[60] md:py-[120px] px-4 md:px-16">
+<section
+  className="
+    border-white/[0.06]
+    py-[60px] md:py-[120px]
+    px-4 md:px-1
 
+    bg-[linear-gradient(180deg,_#1F2DDB_0%,_#000002_100%)]
+
+    md:bg-none
+    md:bg-[#0A0A0A]
+  "
+>
   <div className="flex flex-col xl:flex-row">
 
     {/* LEFT LABEL */}
-    <div className="xl:w-[25%] mb-10 xl:mb-0">
+    <div className="xl:w-[25%] mb-10 xl:mb-0 text-center">
 
       <span className="font-inter font-medium text-[11px] leading-[16.5px] tracking-[2.4px] uppercase text-white/35">
         01 — The Brief
@@ -138,20 +149,21 @@ export default async function Page({
     </div>
 
     {/* RIGHT CONTENT */}
-    <div className="xl:w-[650px] max-w-[650px] ml-ato">
+    <div className="xl:w-[650px] max-w-[650px] ml-ato text-center">
 
       {/* Heading */}
-      <h2 className="font-inter font-light  text-[36px] md:text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
+      <h2 className="font-inter font-light  text-[32px] md:text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
         {project.abouteading}
       </h2>
 
       {/* Paragraph */}
       <p className="mt-[26px] max-w-[620px] font-inter font-normal text-[16px] md:text-[18px] leading-[1.55] tracking-[-0.3px] text-white/70">
+      
        {project.aboutDescription} 
       </p>
 
       {/* CTA */}
-      <button className="mt-[28px] text-[#0D52DB] font-inter font-medium text-[16px] md:text-[18px] leading-[1.5] tracking-[-0.2px] hover:opacity-70 transition">
+      <button className="mt-[28px] text-[#ffffff] md:text-[#0D52DB] font-inter font-medium text-[16px] md:text-[18px] leading-[1.5] tracking-[-0.2px] hover:opacity-70 transition">
         Read More
       </button>
 
@@ -171,11 +183,15 @@ export default async function Page({
 {/* Saying */}
 <section className="quote-section border-t border-white/[0.06] py-[60] md:py-[160px] overflow-hidden">
 
-  <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+  <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center">
 
     {/* Quote */}
-    <h2 className="font-source-serif font-light italic text-[36px] leading-[1.4] md:text-[78px] lg:text-[78px] md:leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
-
+    <h2 className="flex md:block font-source-serif font-light italic text-[36px] leading-[1.4] md:text-[78px] lg:text-[78px] md:leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
+<Image
+  src={CurveImage}
+  alt="Curve"
+  className="curve-image block md:hidden"
+/>
       “{project.quote} ”
 
     </h2>
