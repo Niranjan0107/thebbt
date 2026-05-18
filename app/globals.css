@@ -826,6 +826,9 @@ html, body, .bottom-section {
 
 @media(max-width:767px)
 {
+  .bbt-content {
+    height: 100dvh;
+}
 body .bbt-main-banner:after {
         content: "";
         width: 100%;
@@ -1006,7 +1009,7 @@ body .bbt-top-area
 }
 body .bbt-main-banner {
  row-gap: 15px;
-        height: 80vh;
+        height: 80%;
         padding: 0;
         position: absolute;
         bottom: 0;
