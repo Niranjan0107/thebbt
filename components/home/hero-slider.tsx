@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import TestimonialSlider from "./parts/testimonials";
 import AreaWeServe from "./parts/areaWeSearve";
 import Whyus from "./parts/whyUs";
+import { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
@@ -28,6 +28,8 @@ const slides = [
 export default function HeroSlider() {
   const [index, setIndex] = useState(0);
 
+  const awsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
@@ -36,6 +38,46 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, []);
 
+useEffect(() => {
+  const element = awsRef.current;
+
+  if (!element) return;
+
+  const handleWheel = (e: WheelEvent) => {
+
+    const canScroll =
+      element.scrollWidth > element.clientWidth;
+
+    if (!canScroll) return;
+
+    const isAtStart = element.scrollLeft <= 0;
+
+    const isAtEnd =
+      element.scrollLeft + element.clientWidth >=
+      element.scrollWidth - 2;
+
+    if (
+      (!isAtStart && e.deltaY < 0) ||
+      (!isAtEnd && e.deltaY > 0)
+    ) {
+      e.preventDefault();
+
+      element.scrollBy({
+  left: e.deltaY * 1.2,
+  behavior: "smooth",
+});
+    }
+  };
+
+  window.addEventListener("wheel", handleWheel, {
+    passive: false,
+  });
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+  };
+}, []);
+
   return (
     <section
       className="w-full h-screen bg-cover bg-center transition-all duration-1000 flex items-center px-[5px] sm:px-20 bbt-main-banner"
@@ -43,7 +85,7 @@ export default function HeroSlider() {
         backgroundImage: `url(${slides[index].image})`,
       }}
     >
-      <h4>For institutions, founders, and <br/>houses that intend to last.</h4>
+      <h4 className="text-[#ffffff/80]">For institutions, founders, and <br/>houses that intend to last.</h4>
       <div className="bbt-top-area">
       <h2 className="text-white text-5xl sm:text-7xl max-w-3xl">
        <span>Design</span>  that<br/><em>drives</em> growth.
@@ -57,8 +99,17 @@ export default function HeroSlider() {
           /></Link>
       </div>
 
+      <Link href="/" className="mobile-btn align-center flex justify-center w-[100%]  gap-3 mt-3 text-[12.51px] leading-[18.77px] tracking-[1.75px] uppercase text-center text-white/90 md:hidden">View Case Studies   <Image
+            src="/images/arrow-right.svg"
+            alt="BBT Arrow"
+            width={11}
+            height={11}
+            priority
+            className="contain object-contain text-[#ffffff] rotate-180"
+          /></Link>
 
-      <div className="bbt-aws">
+
+      <div ref={awsRef} className="bbt-aws">
         <AreaWeServe/>
         <Whyus/>
         <TestimonialSlider/>

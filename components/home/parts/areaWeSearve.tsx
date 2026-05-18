@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function areaWeServe() {
   return (
      <>
-  <div className="bbt-part-box">
+  <div className="bbt-part-box ml-5 md:ml-0">
     <div className="bbt-part-box-f">
         <div className="bbt-part-header">
             <span>01</span>

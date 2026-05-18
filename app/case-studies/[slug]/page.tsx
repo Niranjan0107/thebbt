@@ -121,7 +121,7 @@ export default async function Page({
 
 
 
-      <div className="bottom-section pt-1 md:pt-10" id="more-info">
+      <div className=" bg-[#0A0A0A] bottom-section pt-1 md:pt-10" id="more-info">
 
       {/* intro section */}
       <section className="border-white/[0.06] py-[60] md:py-[120px] px-4 md:px-16">

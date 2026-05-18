@@ -94,7 +94,13 @@ useEffect(() => {
   className="trigger"
   onClick={() => setOpen(!open)}
 >
-  ☰
+   <Image
+            src="/images/ButtonOpenmenu.svg"
+            alt="BBT Logo"
+            width={27}
+            height={27}
+            priority
+          />
 </button>
 
             <span>
