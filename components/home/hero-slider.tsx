@@ -39,9 +39,6 @@ export default function HeroSlider() {
   }, []);
 
 useEffect(() => {
-
-  if (window.innerWidth < 768) return;
-
   const element = awsRef.current;
 
   if (!element) return;
@@ -66,9 +63,9 @@ useEffect(() => {
       e.preventDefault();
 
       element.scrollBy({
-        left: e.deltaY * 1.2,
-        behavior: "smooth",
-      });
+  left: e.deltaY * 1.2,
+  behavior: "smooth",
+});
     }
   };
 
@@ -79,7 +76,6 @@ useEffect(() => {
   return () => {
     window.removeEventListener("wheel", handleWheel);
   };
-
 }, []);
 
   return (
