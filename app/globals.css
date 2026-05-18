@@ -890,10 +890,6 @@ body .bbt-content-area section {
     width: 100%;
     height: 100%;
 }
-body .bbt-aws {
-        width: 100% !important;
-        padding-bottom: 18dvh;
-    }
 
 .bbt-main-banner > * {
     z-index: 11;
