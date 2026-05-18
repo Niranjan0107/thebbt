@@ -1006,7 +1006,7 @@ body .bbt-top-area
 }
 body .bbt-main-banner {
  row-gap: 15px;
-        height: 90dvh;
+        height: 90vh;
         padding: 0;
         position: absolute;
         bottom: 0;
