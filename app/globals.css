@@ -138,15 +138,7 @@ img.bbt--client {
     position: relative;
 }
 
-.bbt-main-banner:after {
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: linear-gradient(180deg, #000000ed 17.43%, rgba(0, 0, 0, 0) 53.56%);
-}
+
 
 .bbt-clients img {
     filter: opacity(0.5);
@@ -834,7 +826,15 @@ html, body, .bottom-section {
 
 @media(max-width:767px)
 {
-    
+body .bbt-main-banner:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, #000000ed 17.43%, rgba(0, 0, 0, 0) 53.56%);
+}
 
 .bbt-main-banner h4 {
     font-size: 13.6px;
