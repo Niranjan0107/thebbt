@@ -1006,12 +1006,12 @@ body .bbt-top-area
 }
 body .bbt-main-banner {
  row-gap: 15px;
-        height: 86vh;
+        height: 80vh;
         padding: 0;
         position: absolute;
         bottom: 0;
         overflow: hidden;
-        padding-top: 50px !important;
+        /* padding-top: 50px !important; */
 }
 body .project-details {
     text-align: center !important;
