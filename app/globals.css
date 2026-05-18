@@ -881,8 +881,24 @@ body .bbt-content-area section {
     background-size: cover;
     background-position: 75%;
 }
+.bbt-main-banner:after {
+    content: "";
+    background: linear-gradient(180deg, #000000d1 29.43%, rgba(0, 0, 0, 0) 53.56%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+body .bbt-aws {
+        width: 100% !important;
+        padding-bottom: 18dvh;
+    }
 .bbt-layout.flex.h-screen {
     height: 100dvh !important;
+}
+.bbt-main-banner > * {
+    z-index: 11;
 }
 body .bbt-aws {
     padding-bottom: 125px !important;
