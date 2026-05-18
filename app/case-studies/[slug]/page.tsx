@@ -57,11 +57,8 @@ export default async function Page({
               <span className="font-normal text-[10.43px] leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
                 {project.services}
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl mt-2 mb-4 font-medium leading-tight">
-                {project.title.split(" ").slice(0, -1).join(" ")}
-                <span className="italic block">
-                  {project.title.split(" ").slice(-1)}
-                </span>
+              <h1 className="text-[38px] md:text-5xl lg:text-6xl 2xl:text-7xl mt-2 mb-4 font-medium leading-tight">
+                {project.title}
               </h1>
 
               <span className="mt-6 text-neutral-300 max-w-lg text-[16px]">
@@ -149,7 +146,7 @@ export default async function Page({
     </div>
 
     {/* RIGHT CONTENT */}
-    <div className="xl:w-[650px] max-w-[650px] ml-ato text-center">
+    <div className="xl:w-[650px] max-w-[650px] ml-ato text-center md:text-left">
 
       {/* Heading */}
       <h2 className="font-inter font-light  text-[32px] md:text-[58px] lg:text-[60px] leading-[1.05] tracking-[-2px] text-white max-w-[780px]">
@@ -183,7 +180,7 @@ export default async function Page({
 {/* Saying */}
 <section className="quote-section border-t border-white/[0.06] py-[60] md:py-[160px] overflow-hidden">
 
-  <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center">
+  <div className="max-w-[1000px] mx-auto px-6 lg:px-12 text-center md:text-left">
 
     {/* Quote */}
     <h2 className="flex md:block font-source-serif font-light italic text-[36px] leading-[1.4] md:text-[78px] lg:text-[78px] md:leading-[1.1] tracking-[-2.5px] text-white max-w-[980px]">
@@ -192,7 +189,7 @@ export default async function Page({
   alt="Curve"
   className="curve-image block md:hidden"
 />
-      “{project.quote} ”
+      <em>“{project.quote}”</em>
 
     </h2>
 

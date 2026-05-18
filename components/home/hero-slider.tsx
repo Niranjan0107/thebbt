@@ -85,7 +85,7 @@ useEffect(() => {
         backgroundImage: `url(${slides[index].image})`,
       }}
     >
-      <h4 className="text-[#ffffff/80]">For institutions, founders, and <br/>houses that intend to last.</h4>
+      <h4 className="text-white/80">For institutions, founders, and <br/>houses that intend to last.</h4>
       <div className="bbt-top-area">
       <h2 className="text-white text-5xl sm:text-7xl max-w-3xl">
        <span>Design</span>  that<br/><em>drives</em> growth.

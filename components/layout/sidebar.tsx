@@ -38,19 +38,19 @@ const menuItems = [
 
 <div className="bbt-menu">
       {/* Menu */}
-      <ul className="text-gray-400 bbt-menu-box">
+      <ul className="text-gray-400 bbt-menu-box bg-[#0A0A0A]">
         {menuItems.map((item) => {
           const isActive = pathname === item.path;
 
           return (
-            <li key={item.path}>
+            <li key={item.path} className="py-1 md:py-2">
               <Link
                 onClick={() => setOpen(false)} 
                 href={item.path}
                 className={`flex items-center gap-3 transition-all duration-300 ${
                   isActive
                     ? "active font-semibold"
-                    : "text-gray-400 hover:text-white"
+                    : "text-[#737373] text-[14px] hover:text-white"
                 }`}
               >
                 <span>{item.id}</span>

@@ -27,17 +27,18 @@ body {
   color: var(--foreground);
 }
 
-body {
-  font-family: var(--font-inter), sans-serif;
+body, a {
+font-family: "Inter", sans-serif !important;
 }
 
-/* h1, h2, h3
+ h1, h2, h3
 {
-     font-family:neue-haas-grotesk-display !important;
-} */
+     font-family:"neue-haas-grotesk-display" !important;
+} 
 
 .font-serif, em, .italic {
-  font-family: var(--font-source-serif), serif;
+    font-family: "Source Serif 4", serif;
+font-style: italic;
 }
 :root {
   --primary-color: #2B40AF;
@@ -95,9 +96,9 @@ body {
     margin-top: 30px;
 }
 
-.bbt-menu li {
+/* .bbt-menu li {
     margin-bottom: 10px;
-}
+} */
 .bg-dark
 {
   background-color: #0e0e0e;
@@ -137,13 +138,14 @@ img.bbt--client {
     position: relative;
 }
 
-.bbt-footer:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(206deg, rgba(0, 0, 0, 0) 0.74%, #00000075 91.57%);
+.bbt-main-banner:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(180deg, #000000ed 17.43%, rgba(0, 0, 0, 0) 53.56%);
 }
 
 .bbt-clients img {
@@ -631,7 +633,9 @@ color: rgb(255 255 255 / 33%);
     margin-top: auto;
 }
 
-
+a.bbt-btn-top {
+    color: #fff;
+}
 a.bbt-btn {
     font-weight: 500;
     font-size: 13.73px;
@@ -639,6 +643,7 @@ a.bbt-btn {
     letter-spacing: 0.6px;
     text-transform: capitalize;
     background-color: #3551E0;
+    color: #fff;
     padding: 10px 12px;
     align-items: center;
     column-gap: 4px;
@@ -857,8 +862,8 @@ body .bbt-part-box {
     background: #0000003D;
     backdrop-filter: blur(5.639872px);
     box-shadow: 0px 4.39px 177.19px 0px #0000000D !important;
-    min-width: 68%;
-    width: 68% !important;
+    min-width: 85%;
+    width: 85% !important;
 }
 /* body  .bbt-part-box-f {
     justify-content: center;
@@ -884,7 +889,15 @@ body .bbt-content-area section {
 }
 .bbt-main-banner:after {
     content: "";
-    background: linear-gradient(180deg, #000000d1 29.43%, rgba(0, 0, 0, 0) 53.56%);
+    background: linear-gradient(
+  to bottom,
+  rgba(0,0,0,0.95) 0%,
+  rgba(0,0,0,0.85) 25%,
+  rgba(0,0,0,0.55) 45%,
+  rgba(0,0,0,0.25) 65%,
+  rgba(0,0,0,0.08) 82%,
+  rgba(0,0,0,0) 100%
+);
     position: absolute;
     top: 0;
     left: 0;
@@ -969,8 +982,12 @@ body .bbt-sidebar {
     z-index: 999 !important;
 }
 
+body .single-content {
+    padding-top: 130px;
+}
+
 body .mobile-header {
-    z-index: 99;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 117.24%);
 }
 body .more-info
 {
@@ -988,12 +1005,13 @@ body .bbt-top-area
     text-align: center; 
 }
 body .bbt-main-banner {
-    row-gap: 15px;
-    padding-top: 80px !important;
-    padding: 0px;
-    position: relative;
-            overflow: hidden;
-                    height: 100dvh;
+ row-gap: 15px;
+        height: 90dvh;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        padding-top: 50px !important;
 }
 body .project-details {
     text-align: center !important;

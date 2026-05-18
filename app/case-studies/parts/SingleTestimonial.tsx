@@ -21,7 +21,7 @@ uppercase">Word from the client</span>
             <p className="text-[18.7px] text-[#ffffff] font-extralight italic font-serif h-[70%]
 min-h-[136px]
 flex
-items-center">
+items-center justify-center md:justify-start">
               “Quiet is the most expensive luxury we know.”
             </p>
 

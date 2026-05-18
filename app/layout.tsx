@@ -52,8 +52,11 @@ useEffect(() => {
         className={`${inter.variable} ${sourceSerif.variable} min-h-full flex flex-col`}
       >
         <link rel="stylesheet" href="https://use.typekit.net/hml3npk.css"></link>
-         <main className="overflow-hidden1">
-      <div className="bbt-layout flex h-screen">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+        </link>
+         <main className="overflow-hidden1 ">
+      <div className="bbt-layout flex h-screen bg-[#0A0A0A]">
         
         {/* Sidebar */}
        <div
@@ -75,7 +78,7 @@ useEffect(() => {
 )}
 
         {/* Content */}
-        <div   ref={contentRef} className="bbt-content flex-1 overflow-y-auto">
+        <div   ref={contentRef} className="bbt-content flex-1 overflow-y-auto bg-[#0A0A0A]">
           <div
   className={`
     fixed z-[99] w-[100%] mobile-header
@@ -86,8 +89,8 @@ useEffect(() => {
     transition-all duration-300
 
     ${scrolled
-      ? ""
-      : "bg-transparent"}
+      ? "pt-[20px]"
+      : "pt-[40px]"}
   `}
 >
         <button

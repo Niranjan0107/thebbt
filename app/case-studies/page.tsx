@@ -24,9 +24,9 @@ export default function CaseStudiesPage() {
       : cases.filter((c) => c.category === activeFilter);
 
   return (
-    <main className="text-white min-h-screen px-6 md:px-16 py-16 bg-[#0A0A0A] ">
+    <main className="text-white h-auto md:min-h-screen px-6 md:px-16 py-16 bg-[#0A0A0A]">
       {/* HEADER */}
-      <div className="case-header">
+      <div className="case-header pt-15 md:pt-0">
         <div className="case-header-top flex justify-between">
           <p className="tracking-widest font-inter font-medium text-[11.47px] leading-[17.2px] tracking-[2.06px] uppercase text-center text-white/60 mb-4">
             INDEX OF WORK
