@@ -40,85 +40,51 @@ export default function HeroSlider() {
 
 useEffect(() => {
 
-  const slider = awsRef.current;
+  if (window.innerWidth < 768) return;
 
-  if (!slider) return;
+  const element = awsRef.current;
 
-  /*
-    DESKTOP WHEEL
-  */
+  if (!element) return;
+
   const handleWheel = (e: WheelEvent) => {
 
-    if (window.innerWidth < 768) return;
+    const canScroll =
+      element.scrollWidth > element.clientWidth;
 
-    const maxScroll =
-      slider.scrollWidth - slider.clientWidth;
+    if (!canScroll) return;
 
-    if (maxScroll <= 0) return;
+    const isAtStart = element.scrollLeft <= 0;
 
-    e.preventDefault();
+    const isAtEnd =
+      element.scrollLeft + element.clientWidth >=
+      element.scrollWidth - 2;
 
-    slider.scrollLeft += e.deltaY;
-  };
+    if (
+      (!isAtStart && e.deltaY < 0) ||
+      (!isAtEnd && e.deltaY > 0)
+    ) {
+      e.preventDefault();
 
-  /*
-    MOBILE TOUCH
-  */
-  let startX = 0;
-  let scrollLeft = 0;
-
-  const handleTouchStart = (e: TouchEvent) => {
-    startX = e.touches[0].pageX;
-    scrollLeft = slider.scrollLeft;
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    const x = e.touches[0].pageX;
-
-    const walk = (startX - x) * 1.2;
-
-    slider.scrollLeft = scrollLeft + walk;
+      element.scrollBy({
+        left: e.deltaY * 1.2,
+        behavior: "smooth",
+      });
+    }
   };
 
   window.addEventListener("wheel", handleWheel, {
     passive: false,
   });
 
-  slider.addEventListener(
-    "touchstart",
-    handleTouchStart,
-    { passive: true }
-  );
-
-  slider.addEventListener(
-    "touchmove",
-    handleTouchMove,
-    { passive: true }
-  );
-
   return () => {
-
-    window.removeEventListener(
-      "wheel",
-      handleWheel
-    );
-
-    slider.removeEventListener(
-      "touchstart",
-      handleTouchStart
-    );
-
-    slider.removeEventListener(
-      "touchmove",
-      handleTouchMove
-    );
+    window.removeEventListener("wheel", handleWheel);
   };
 
 }, []);
 
   return (
     <section
-      className="w-full md:h-screen bg-cover bg-center transition-all duration-1000 flex items-center px-[5px] sm:px-20 bbt-main-banner"
+      className="w-full h-screen bg-cover bg-center transition-all duration-1000 flex items-center px-[5px] sm:px-20 bbt-main-banner"
       style={{
         backgroundImage: `url(${slides[index].image})`,
       }}
