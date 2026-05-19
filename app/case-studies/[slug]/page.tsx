@@ -117,7 +117,9 @@ export default async function Page({
       </div>
 
 
-<ProjectNavigation  currentSlug={project.slug}
+<ProjectNavigation
+  currentSlug={project.slug}
+  collapsed={false}
 />
 
 
