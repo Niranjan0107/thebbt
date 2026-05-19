@@ -1,6 +1,8 @@
 "use client";
 import type { Metadata } from "next";
 import { useEffect, useRef, useState } from "react";import "./globals.css";
+import { usePathname } from "next/navigation";
+
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Sidebar from "@/components/layout/sidebar";
 import Image from "next/image";
@@ -46,6 +48,24 @@ useEffect(() => {
     element.removeEventListener("scroll", handleScroll);
   };
 }, []);
+
+const [collapsed, setCollapsed] = useState(false);
+
+const pathname = usePathname();
+
+const isCaseStudyPage =
+  pathname.startsWith("/case-studies/") &&
+  pathname !== "/case-studies";
+
+
+  useEffect(() => {
+  if (isCaseStudyPage) {
+    setCollapsed(true);
+  } else {
+    setCollapsed(false);
+  }
+}, [isCaseStudyPage]);
+
   return (
     <html lang="en">
       <body
@@ -59,16 +79,26 @@ useEffect(() => {
       <div className="bbt-layout flex h-screen bg-[#0A0A0A]">
         
         {/* Sidebar */}
-       <div
+  {/* Sidebar */}
+<div
   className={`
-    w-[255px] bbt-sidebar
+    bbt-sidebar
+    ${collapsed ? "sidebar-collapsed" : "sidebar-expanded"}
+
     fixed md:relative top-0 left-0 z-50 h-screen
-    transition-transform duration-300
+    transition-all duration-300
+    bg-black
+
+    ${collapsed ? "w-[90px]" : "w-[255px]"}
     ${open ? "translate-x-0" : "-translate-x-full"}
     md:translate-x-0
   `}
 >
-  <Sidebar  setOpen={setOpen}/>
+ <Sidebar
+  setOpen={setOpen}
+  collapsed={collapsed}
+  setCollapsed={setCollapsed}
+/>
 </div>
 {open && (
   <div
