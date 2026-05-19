@@ -5,10 +5,12 @@ import { cases } from "@/lib/cases";
 import { useEffect, useState } from "react";
 type Props = {
   currentSlug: string;
+  collapsed: boolean;
 };
 
 export default function ProjectNavigation({
   currentSlug,
+  collapsed,
 }: Props) {
 
 
@@ -58,14 +60,21 @@ useEffect(() => {
 }, []);
 
   return (
-   <div
-  className={`fixed bottom-0 right-0 z-50 transition-all duration-500 w-full md:w-[calc(100%-255px)] ${
-    showNav
-      ? "translate-y-0 opacity-100"
-      : "translate-y-full opacity-0 pointer-events-none"
-  }`}
+<div
+  className={`
+    project-nav fixed bottom-0 right-0 z-50
+    transition-all duration-500 
+
+    w-full
+
+    ${
+      showNav
+        ? "translate-y-0 opacity-100"
+        : "translate-y-full opacity-0 pointer-events-none"
+    }
+  `}
 >
-    <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000f0] md:mt-[0]">
+    <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000f0] md:mt-[0] mr-0 md:mr-[15px]">
 
       <div className="flex items-center justify-between">
 
@@ -124,7 +133,7 @@ useEffect(() => {
               <div>
 
                 <p className="font-inter font-normal text-[8px] leading-[12px] md:text-[10.43px] md:leading-[15.64px] tracking-[3.34px] uppercase text-[#FFFFFF8C]">
-                  Next · {nextProject.id}
+                  Next · {nextProject.id} 
                 </p>
 
                 <h3 className="mt-1 text-white uppercase text-[12px] md:text-[14px] leading-none">

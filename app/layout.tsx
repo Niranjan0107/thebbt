@@ -49,6 +49,10 @@ useEffect(() => {
   };
 }, []);
 
+
+
+
+
 const [collapsed, setCollapsed] = useState(false);
 
 const pathname = usePathname();
@@ -65,6 +69,16 @@ const isCaseStudyPage =
     setCollapsed(false);
   }
 }, [isCaseStudyPage]);
+
+
+
+useEffect(() => {
+  if (collapsed) {
+    document.body.classList.add("sidebar-collapsed");
+  } else {
+    document.body.classList.remove("sidebar-collapsed");
+  }
+}, [collapsed]);
 
   return (
     <html lang="en">

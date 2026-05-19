@@ -117,7 +117,8 @@ export default async function Page({
       </div>
 
 
-<ProjectNavigation currentSlug={project.slug} />
+<ProjectNavigation  currentSlug={project.slug}
+/>
 
 
 
@@ -214,13 +215,18 @@ export default async function Page({
 {/* Saying */}
 
 
-<img src={project.projectImage4} className="w-full h-auto mb-4"/>
-    <img src={project.projectImage5} className="w-full h-auto mb-4"/>
+ <img src={project.projectImage5} className="w-full h-auto mb-4"/>
 <img src={project.projectImage6} className="w-full h-auto mb-4"/>
     <img src={project.projectImage7} className="w-full h-auto mb-4"/>
 <img src={project.projectImage8} className="w-full h-auto mb-4"/>
     <img src={project.projectImage9} className="w-full h-auto mb-4"/>
+    <div className="flex gap-4">
+      <span>
     <img src={project.projectImage10} className="w-full h-auto mb-4"/>
+    </span>
+   <span><img src={project.projectImage10} className="w-full h-auto mb-4"/>
+</span> 
+    </div>
 <img src={project.projectImage11} className="w-full h-auto mb-4"/>
 
         {/* Credit */}
