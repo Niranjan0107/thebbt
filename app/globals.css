@@ -828,9 +828,29 @@ html, body, .bottom-section {
     scroll-behavior: smooth;
 }
 
+@media(min-width:768px)
+{
+    body.sidebar-collapsed .project-nav {
+  width: calc(100% - 90px) !important;
+  left: 90px !important;
+}
+
+
+body:not(.sidebar-collapsed) .project-nav {
+  width: calc(100% - 255px) !important;
+  left: 255px !important;
+}
+
+}
 
 @media(max-width:767px)
 {
+
+ body.sidebar-collapsed .fixed-nav .project-nav {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+}
 body .bbt-main-banner:after {
         content: "";
         width: 100%;
@@ -1086,18 +1106,44 @@ body a.bbt-btn-top, body .bbt-top-area a.bbt-btn
     top: 7px;
 }
 
-
-
-body.sidebar-collapsed .project-nav {
-  width: calc(100% - 90px) !important;
+.bbt-content::-webkit-scrollbar {
+  width: 15px;
 }
 
-body:not(.sidebar-collapsed) .project-nav {
-  width: calc(100% - 255px) !important;
+.bbt-content::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+.bbt-content::-webkit-scrollbar-thumb {
+  background: #5c5c5c;
+  border-radius: 20px;
+  border: 3px solid #0A0A0A;
+}
+
+.bbt-content::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7a;
 }
 
 
+body, html
+{
+  overflow-y: hidden;
+}
+.reveal-section {
+  opacity: 0;
+  transform: translateY(80px) scale(0.96);
 
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease;
+
+  will-change: transform, opacity;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 .sidebar-tooltip {
   position: absolute;
   left: 70px;
@@ -1246,4 +1292,45 @@ cursor: pointer;
 
 .bbt-content-area section {
     background-position: right;
+}
+
+
+
+.quote-bbt h2 .bbt-says:before {
+    content: "";
+    background-color: #02020d;
+    height: 100%;
+    width: 15px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-left: 7px solid #1f2ddb;
+  border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.quote-bbt h2 .bbt-says {
+    position: relative;
+    padding-left: 30px;
+}
+
+.quote-logo
+{
+    position: relative;
+    padding-left: 30px;
+}
+
+.quote-logo:before {
+    content: "";
+    background-color: #02020d;
+    height: 100%;
+    width: 15px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-left: 7px solid #1f2ddb;
+ border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
 }

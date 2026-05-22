@@ -17,6 +17,10 @@ export default function ProjectNavigation({
 
   const [showNav, setShowNav] = useState(false);
 
+  const isMobile =
+  typeof window !== "undefined" &&
+  window.innerWidth < 768;
+
   const currentIndex = cases.findIndex(
     (item) => item.slug === currentSlug
   );
@@ -62,10 +66,12 @@ useEffect(() => {
   return (
 <div
   className={`
-    project-nav fixed bottom-0 right-0 z-50
-    transition-all duration-500 
+    project-nav
+    fixed bottom-0 z-50
+    transition-all duration-500
 
-    w-full
+    left-0 right-0
+    md:right-[15px]
 
     ${
       showNav
@@ -73,6 +79,7 @@ useEffect(() => {
         : "translate-y-full opacity-0 pointer-events-none"
     }
   `}
+
 >
     <div className="border-t border-white/[0.06] py-3 px-3 md:py-3 md:px-6 bg-[#000000f0] md:mt-[0] mr-0 md:mr-[15px]">
 

@@ -7,6 +7,7 @@ import { Inter, Source_Serif_4 } from "next/font/google";
 import Sidebar from "@/components/layout/sidebar";
 import Image from "next/image";
 import Link from "next/link";
+import RevealProvider from "./case-studies/parts/RevealProvider";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -169,6 +170,8 @@ useEffect(() => {
 
       </div>
     </main>
+
+    <RevealProvider/>
       </body>
     </html>
   );
